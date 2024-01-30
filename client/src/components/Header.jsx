@@ -1,7 +1,7 @@
 import { Button, Navbar, TextInput } from 'flowbite-react';
 import { Link,useLocation } from 'react-router-dom';
-import {AiOutlineSearch} from 'react-icons/ai'
-import {FaMoon} from 'react-icons/fa'
+import { AiOutlineSearch } from 'react-icons/ai'
+import { FaMoon } from 'react-icons/fa'
 
 
 
@@ -52,8 +52,8 @@ const Header = () => {
                 About
               </Link>
             </Navbar.Link>
-            <Navbar.Link active={path==="/project"} as={'div'}>
-              <Link to='/project' >
+            <Navbar.Link active={path==="/projects"} as={'div'}>
+              <Link to='/projects' >
                 Projects
               </Link>
             </Navbar.Link>
