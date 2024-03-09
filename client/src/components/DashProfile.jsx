@@ -58,7 +58,8 @@ export default function DashProfile() {
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setImageFileUrl(downloadURL);
-          setFormData({ ...formData, profilePicture: downloadURL });
+          // i just changed profilePicture to profilePic
+          setFormData({ ...formData, profilePic: downloadURL });
           setImageFileUploading(false);
         });
       }
