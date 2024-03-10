@@ -7,19 +7,19 @@ import cookieParser from 'cookie-parser';
 dotenv.config();
 
 
-// mongoose.connect(process.env.MONGODB)
-// .then(
-//     () => {
-//         console.log("mongoDB connected");
-//     }).catch((err) =>{console.log(err)});  
+mongoose.connect(process.env.MONGODB)
+.then(
+    () => {
+        console.log("mongoDB connected");
+    }).catch((err) =>{console.log(err)});  
 
-    mongoose.connect("mongodb://127.0.0.1:27017/my-blog")
-    .then(()=>{
-        console.log("mongodb connected");
-    })
-    .catch(()=>{
-        console.log("failed to connect to mongodb");
-    })
+    // mongoose.connect("mongodb://127.0.0.1:27017/my-blog")
+    // .then(()=>{
+    //     console.log("mongodb connected");
+    // })
+    // .catch(()=>{
+    //     console.log("failed to connect to mongodb");
+    // })
 
 
 
