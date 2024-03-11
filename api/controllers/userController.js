@@ -37,7 +37,7 @@ export const updateUser =async( req, res , next ) => {
           );
         }
       }
-      console.log("updated data is :" ,req.body);
+      
 
       try {
         const updatedUser = await User.findByIdAndUpdate(
@@ -75,6 +75,7 @@ export const deleteUser = async( req, res , next )=>{
   }
 
 }
+
 
 
 export const signOut = (req, res, next) => {
