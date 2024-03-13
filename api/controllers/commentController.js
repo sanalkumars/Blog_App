@@ -3,7 +3,6 @@ import Comment from "../models/comment.js";
 export const createComment = async (req, res, next) => {
     try {
       const { content, postId, userId } = req.body;
-      console.log(req.body);
   
       if (userId !== req.user.id) {
         return next(
