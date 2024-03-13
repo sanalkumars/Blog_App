@@ -1,9 +1,10 @@
 import express from 'express';
 import mongoose  from 'mongoose';
 import dotenv from 'dotenv'
-import userRoutes from './routes/userRoute.js'
-import authRoutes from './routes/authRoute.js'
-import postRoutes from './routes/postRoute.js'
+import userRoutes from './routes/userRoute.js';
+import authRoutes from './routes/authRoute.js';
+import postRoutes from './routes/postRoute.js';
+import commentRoute from './routes/commentRoute.js';
 import cookieParser from 'cookie-parser';
 dotenv.config();
 
@@ -37,6 +38,7 @@ app.listen(3000, () => {
 app.use('/api/user', userRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/post', postRoutes)
+app.use('/api/comment',commentRoute)
 
 app.use((err,req,res,next) => {
 
