@@ -14,6 +14,7 @@ import CreatePost from './pages/CreatePost'
 import UpdatePost from './pages/UpdatePost'
 import PostPage from './pages/PostPage'
 import ScrollToTop from './components/ScrollToTop'
+import Search from './pages/Search'
 
 
 const App = () => {
@@ -30,6 +31,8 @@ const App = () => {
           <Route path='/signin' element={<Signin />} />
 
           <Route path='/signup' element={<SignUp />} />
+
+          <Route path='/search' element={<Search />} />
 
           <Route path='/projects' element={<Project />} />
 
