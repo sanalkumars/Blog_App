@@ -6,6 +6,7 @@ import authRoutes from './routes/authRoute.js';
 import postRoutes from './routes/postRoute.js';
 import commentRoute from './routes/commentRoute.js';
 import cookieParser from 'cookie-parser';
+import path from 'path';
 dotenv.config();
 
 
@@ -13,15 +14,12 @@ mongoose.connect(process.env.MONGODB)
 .then(
     () => {
         console.log("mongoDB connected");
-    }).catch((err) =>{console.log(err)});  
+    })
+    .catch((err) =>{
+        console.log(err)
+    });  
 
-    // mongoose.connect("mongodb://127.0.0.1:27017/my-blog")
-    // .then(()=>{
-    //     console.log("mongodb connected");
-    // })
-    // .catch(()=>{
-    //     console.log("failed to connect to mongodb");
-    // })
+   const __dirname = path.resolve();
 
 
 
@@ -39,6 +37,15 @@ app.use('/api/user', userRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/post', postRoutes)
 app.use('/api/comment',commentRoute)
+
+
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
+
+
 
 app.use((err,req,res,next) => {
 
